@@ -53,3 +53,64 @@ public class Clock {
             int choice = scanner.nextInt();
 
             switch (choice) {
+                case 1:
+                    // Convert seconds to minutes
+                    System.out.print("Enter the value: ");
+                    int secondsToMinutes = scanner.nextInt();
+                    System.out.println("Seconds to Minutes: " + clock.SecondstoMinutes(secondsToMinutes) + " " );
+                    break;
+
+                case 2:
+                    // Convert seconds to hours
+                    System.out.print("Enter the value: ");
+                    int secondsToHours = scanner.nextInt();
+                    System.out.println("Seconds to Hours: " +  clock.SecondstoHours(secondsToHours) + " " );
+                    break;
+
+                case 3:
+                    // Convert minutes to seconds
+                    System.out.print("Enter the value: ");
+                    int minutesToSeconds = scanner.nextInt();
+                    System.out.println("Minutes to Seconds: " + clock.MinutestoSeconds(minutesToSeconds) + " " );
+                    break;
+
+                case 4:
+                    // Convert minutes to hours
+                    System.out.print("Enter the value: ");
+                    int minutesToHours = scanner.nextInt();
+                    System.out.println("Minutes to Hours: " + clock.MinutestoHours(minutesToHours) + " " );
+                    break;
+
+                case 5:
+                    // Convert hours to seconds
+                    System.out.print("Enter the value: ");
+                    int hoursToSeconds = scanner.nextInt();
+                    System.out.println("Hours to Seconds: " + clock.HourstoSeconds(hoursToSeconds) + " " );
+                    break;
+
+                case 6:
+                    // Convert hours to minutes
+                    System.out.print("Enter the value: ");
+                    int hoursToMinutes = scanner.nextInt();
+                    System.out.println("Hours to Minutes " + clock.HourstoMinutes(hoursToMinutes) + " " );
+                    break;
+
+                default:
+                    // Invalid choice
+                    System.out.println("Invalid choice. Kindly choose a number from 1 to 6.");
+                    break;
+            }
+
+            // Ask if the user want to do another conversion
+            System.out.print("Do you want to convert time? (Y/N): ");
+            String continueResponse = scanner.next();
+
+            // Check if the user wants to continue or exit
+            if (continueResponse.equalsIgnoreCase("N")) {
+                continueConversion = false;  // Exit the loop
+                System.out.println("Thank you for using the Clock Conversion program. Adieu!");
+            }
+        }
+        scanner.close();  // Close the scanner
+    }
+}
